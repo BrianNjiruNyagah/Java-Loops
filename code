@@ -1,0 +1,41 @@
+import java.util.*;
+import java.io.*;
+import java.lang.Math; 
+
+class Solution{
+    public static void main(String []argh){
+        Scanner in = new Scanner(System.in);
+        double value=0;
+        int t=in.nextInt();
+        int [][] data = new int[t][3];
+
+            for(int i=0;i<t;i++){
+                int a = in.nextInt();
+                int b = in.nextInt();
+                int n = in.nextInt();
+
+                data[i][0]=a;
+                data[i][1]=b;
+                data[i][2]=n;
+                
+            }
+        
+            for(int i = 0; i<t;i++){
+                int getta = data[i][2];
+                for(int j=0;j<getta;j++){
+                    if(j==0){
+                        value+=data[i][0]+data[i][1];
+                        System.out.print((int)value + " ");
+                    }
+                    if(j>0){
+                        value+=data[i][1]*Math.pow(2,j);
+                        System.out.print((int)value + " ");
+                    }
+                }
+                System.out.printf("%n");
+                value*=0;
+            }
+        in.close();
+    }
+}
+
